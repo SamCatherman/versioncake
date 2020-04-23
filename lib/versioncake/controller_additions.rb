@@ -17,6 +17,7 @@ module VersionCake
     # The explicit version requested by a client, this may not
     # be the rendered version and may also be nil.
     def request_version
+      puts "request_version #{version_context.inspect}"
       @request_version ||= version_context.version
     end
 
@@ -33,6 +34,8 @@ module VersionCake
     protected
 
     def version_context
+      puts "version_context #{request.inspect}"
+      puts "version_context #{request.env}"
       request.env['versioncake.context']
     end
 
@@ -61,6 +64,7 @@ module VersionCake
     end
 
     def set_version(version)
+      puts "setting version #{version}"
       @request_version = version
     end
   end

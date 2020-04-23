@@ -3,6 +3,9 @@ module VersionCake
     attr_reader :version, :resource, :result
 
     def initialize(version, resource, result)
+      puts "initializing versionContext #{version}"
+      puts "initializing versionContext #{resource}"
+      puts "initializing versionContext #{result}"
       @version, @resource, @result = version, resource, result
     end
 
